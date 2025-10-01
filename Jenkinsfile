@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment{
         DOCKER_IMAGE = "dvc808/nginx"
+        PATH = "/home/dvc/.local/bin:$PATH"
     }
     stages {
         stage("Build"){
