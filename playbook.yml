@@ -45,9 +45,8 @@
       copy:
         src: docker-compose.yaml
         dest: /home/ubuntu/
-    - name: Restart docker-compose
+    - name: Restart docker-compose (using Docker plugin)
       shell: |
-          docker-compose stop
-          docker-compose rm -f
-          docker-compose pull
-          docker-compose up -d
+        docker compose down
+        docker compose pull
+        docker compose up -d
