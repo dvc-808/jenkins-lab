@@ -32,9 +32,9 @@ pipeline {
                 timeout(time: 10, unit: 'MINUTES')
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'e532a91a-3cc8-40ae-abd6-b605ab51a315', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     ansiblePlaybook(
-                        credentialsId: 'private_key',
+                        credentialsId: 'EC2key',
                         playbook: 'playbook.yml',
                         inventory: 'hosts',
                         become: 'yes',
